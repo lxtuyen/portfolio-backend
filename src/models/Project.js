@@ -22,8 +22,8 @@ const projectSchema = new mongoose.Schema(
       type: String,
     },
 
-    image: {
-      type: String,
+    images: {
+      type: [String],
     },
 
     tech: {
