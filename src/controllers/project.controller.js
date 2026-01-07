@@ -1,9 +1,5 @@
 const Project = require("../models/Project");
 
-/**
- * GET /api/projects
- * Lấy danh sách project
- */
 exports.getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
@@ -20,10 +16,6 @@ exports.getProjects = async (req, res) => {
   }
 };
 
-/**
- * GET /api/projects/:id
- * Lấy chi tiết project
- */
 exports.getProjectById = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
@@ -47,10 +39,6 @@ exports.getProjectById = async (req, res) => {
   }
 };
 
-/**
- * POST /api/projects
- * Tạo project
- */
 exports.createProject = async (req, res) => {
   try {
     const project = await Project.create(req.body);
@@ -68,10 +56,6 @@ exports.createProject = async (req, res) => {
   }
 };
 
-/**
- * PUT /api/projects/:id
- * Cập nhật project
- */
 exports.updateProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndUpdate(
@@ -100,10 +84,6 @@ exports.updateProject = async (req, res) => {
   }
 };
 
-/**
- * DELETE /api/projects/:id
- * Xoá project
- */
 exports.deleteProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndDelete(req.params.id);
